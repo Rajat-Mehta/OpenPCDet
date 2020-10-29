@@ -1,0 +1,19 @@
+1. Go to this path: /venv/lib/python3.6/site-packages/torch/share/cmake/Caffe2/Caffe2Targets.cmake
+Line No.73: 
+INTERFACE_COMPILE_OPTIONS "-Wextra;-Wno-unused-parameter;-Wno-missing-field-initializers;-Wno-write-strings;-Wno-unknown-pragmas;-Wno-missing-braces;-fopenmp"
+
+Remove "-Wall;"
+
+
+2. 
+The CUDA compiler
+
+"/usr/bin/nvcc"
+is not able to compile a simple test program.
+
+Sol:
+set(CMAKE_CUDA_COMPILER "/usr/local/cuda/bin/nvcc")
+This should be added before the line 5
+'if (SPCONV_BuildCUDA)'
+
+
